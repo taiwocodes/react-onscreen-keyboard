@@ -18,9 +18,6 @@ import {  useState } from 'react';
 		currentlyFocusedInput.focus();
 	};
 
-	const deleteButton = (e) => {}
-
-
   
 
 //   useEffect(() => {
