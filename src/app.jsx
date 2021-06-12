@@ -18,6 +18,18 @@ import {  useState } from 'react';
 		currentlyFocusedInput.focus();
 	};
 
+	const backspaceHandler = (e) => {
+		setCurrentlyFocusedInput ((currFoc) => {
+			let val = currFoc.value + e.target.value;
+				val = val.slice (0, -1);
+				currFoc.value = val;
+
+				return currFoc;
+		});
+
+		currentlyFocusedInput.focus();
+	};
+
   
 
 //   useEffect(() => {
@@ -81,7 +93,7 @@ import {  useState } from 'react';
 					<button value='N' onClick={buttonHandler}>N</button>
 					<button value='M' onClick={buttonHandler}>M</button>
 
-					<button id='btn_large' className='btn-large'>Backspace</button>
+					<button id='btn_large' className='btn-large' onClick={backspaceHandler}>Backspace</button>
 				</div>
 				<div className='key-row'>
 					<button className='btn-full' value=' ' onClick={buttonHandler}></button>
